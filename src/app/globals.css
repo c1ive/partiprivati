@@ -1,26 +1,376 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --background: #f7f5f3;
+  --foreground: #2d2926;
+  --accent: #b8860b;
+  --muted: #8b7355;
+  --paper: #faf8f5;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1a1714;
+    --foreground: #e8e3de;
+    --accent: #ff0086;
+    --muted: #7a5bf1;
+    --paper: #57edd8;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Kalam", cursive;
+  background-image: radial-gradient(
+      circle at 20px 80px,
+      #2d292620 1px,
+      transparent 1px
+    ),
+    radial-gradient(circle at 80px 20px, #2d292615 1px, transparent 1px),
+    radial-gradient(circle at 40px 40px, #2d292608 1px, transparent 1px);
+  background-size: 100px 100px;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+/* Dynamic Typography - Various Sizes */
+.text-tiny {
+  font-size: 0.75rem;
+}
+
+.text-small {
+  font-size: 1rem;
+}
+
+.text-medium {
+  font-size: 1.5rem;
+}
+
+.text-large {
+  font-size: 2.5rem;
+}
+
+.text-huge {
+  font-size: 4rem;
+}
+
+.text-massive {
+  font-size: 6rem;
+}
+
+.text-gigantic {
+  font-size: 8rem;
+}
+
+@media (max-width: 768px) {
+  .text-huge {
+    font-size: 3rem;
+  }
+  .text-massive {
+    font-size: 4rem;
+  }
+  .text-gigantic {
+    font-size: 5rem;
+  }
+}
+
+/* Indie/handwritten aesthetic elements */
+.handwritten {
+  font-family: "Kalam", cursive;
+  font-weight: 400;
+}
+
+.typewriter {
+  font-family: "Roboto", monospace;
+  font-weight: 300;
+}
+
+/* Dynamic positioning classes */
+.float-left {
+  float: left;
+  margin: 0 2rem 1rem 0;
+}
+
+.float-right {
+  float: right;
+  margin: 0 0 1rem 2rem;
+}
+
+.position-left {
+  text-align: left;
+  margin-left: 5vw;
+}
+
+.position-right {
+  text-align: right;
+  margin-right: 5vw;
+}
+
+.position-center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.position-scattered {
+  transform: rotate(-2deg);
+  margin-left: 10vw;
+}
+
+.position-scattered-right {
+  transform: rotate(1.5deg);
+  margin-right: 8vw;
+  text-align: right;
+}
+
+/* Broken layout blocks */
+.text-block {
+  display: block;
+  margin: 3rem 0;
+  clear: both;
+}
+
+.text-block-left {
+  width: 60%;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.text-block-right {
+  width: 60%;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.text-block-center {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.text-block-wide {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Spacing variations */
+.space-huge {
+  margin: 8rem 0;
+}
+
+.space-large {
+  margin: 4rem 0;
+}
+
+.space-medium {
+  margin: 2rem 0;
+}
+
+.space-small {
+  margin: 1rem 0;
+}
+
+.rough-border {
+  border: 2px solid var(--foreground);
+  border-radius: 0;
+  position: relative;
+}
+
+.rough-border::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 1px solid var(--accent);
+  border-radius: 0;
+  transform: rotate(-0.5deg);
+  z-index: -1;
+}
+
+.paper-bg {
+  background: var(--paper);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e3e0;
+}
+
+.ink-splatter {
+  position: relative;
+}
+
+.ink-splatter::after {
+  content: "•";
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  color: var(--accent);
+  font-size: 20px;
+  transform: rotate(15deg);
+}
+
+/* Navigation styling */
+.nav-link {
+  text-decoration: none;
+  color: var(--foreground);
+  font-weight: 700;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+  transform: rotate(-1deg);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Button styling */
+.indie-btn {
+  background: var(--paper);
+  border: 2px solid var(--foreground);
+  color: var(--foreground);
+  font-family: "Kalam", cursive;
+  font-weight: 700;
+  padding: 8px 16px;
+  transform: rotate(-0.5deg);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.indie-btn:hover {
+  background: var(--accent);
+  color: var(--background);
+  transform: rotate(0deg) scale(1.05);
+}
+
+/* Rough text effects */
+.scribble {
+  position: relative;
+}
+
+.scribble::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  right: -5px;
+  height: 1px;
+  background: var(--accent);
+  transform: translateY(-50%) rotate(-0.5deg);
+}
+
+/* Card styling */
+.event-card {
+  background: var(--paper);
+  border: 1px solid #d4af3750;
+  border-left: 4px solid var(--accent);
+  margin: 1rem 0;
+  padding: 1rem;
+  transform: rotate(0.3deg);
+  transition: transform 0.2s ease;
+}
+
+.event-card:nth-child(even) {
+  transform: rotate(-0.2deg);
+}
+
+.event-card:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.release-card {
+  background: var(--paper);
+  border: 2px solid var(--muted);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  position: relative;
+  transform: rotate(-0.1deg);
+}
+
+.release-card::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px dashed var(--accent);
+  pointer-events: none;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  font-family: "Kalam", cursive;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h1 {
+  font-size: 6rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Utility classes */
+.rotate-1 {
+  transform: rotate(1deg);
+}
+.rotate-2 {
+  transform: rotate(-1deg);
+}
+.rotate-3 {
+  transform: rotate(0.5deg);
 }

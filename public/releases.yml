@@ -1,0 +1,52 @@
+# Releases & Discography
+releases:
+  - title: "Späti Dreams"
+    type: "EP"
+    releaseDate: "2024-03-15"
+    tracks: 4
+    description: |
+      Our debut EP recorded in a weekend at our friend's home studio.
+      Raw, unpolished, and exactly how we wanted it. Four tracks about
+      late-night convenience store runs and existential dread.
+    cover: "/releases/spati-dreams.jpg"
+    links:
+      bandcamp: "https://partiPrivati.bandcamp.com/album/spati-dreams"
+      spotify: "https://open.spotify.com/album/..."
+    tracklist:
+      - "Neon Lights"
+      - "3AM Thoughts"
+      - "Freiburg Rain"
+      - "Tomorrow Maybe"
+
+  - title: "Live at Hausbar"
+    type: "Live Recording"
+    releaseDate: "2024-07-22"
+    tracks: 6
+    description: |
+      Recorded live during our chaotic summer show. You can hear
+      the crowd, the feedback, and that moment when the amp almost
+      died. Pure authentic energy.
+    cover: "/releases/live-hausbar.jpg"
+    links:
+      bandcamp: "https://partiPrivati.bandcamp.com/album/live-hausbar"
+    tracklist:
+      - "Intro/Noise"
+      - "Neon Lights (Live)"
+      - "New Song (Untitled)"
+      - "3AM Thoughts (Live)"
+      - "Crowd Chant"
+      - "Tomorrow Maybe (Extended)"
+
+  - title: "Herbst"
+    type: "Single"
+    releaseDate: "2024-10-31"
+    tracks: 1
+    description: |
+      Our newest single, recorded on a rainy October day.
+      Mellower than our usual stuff but still unmistakably us.
+    cover: "/releases/herbst.jpg"
+    links:
+      bandcamp: "https://partiPrivati.bandcamp.com/track/herbst"
+      spotify: "https://open.spotify.com/track/..."
+    tracklist:
+      - "Herbst"

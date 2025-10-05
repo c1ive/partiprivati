@@ -1,0 +1,23 @@
+# Band Information
+bandName: "Die PartiPrivati"
+tagline: "Indie Rock aus Freiburg"
+description: |
+  We're a scrappy indie rock band from the beautiful Black Forest city of Freiburg.
+  Our sound blends rough garage rock with dreamy melodies, creating something
+  authentically chaotic yet oddly compelling. Think lo-fi recordings, handwritten
+  lyrics, and performances in dive bars and basement venues.
+
+  Started in 2023 in a cramped practice room above a döner shop, we've been
+  making music that captures the restless energy of being young and slightly
+  lost in a picturesque German university town.
+
+image: "/band-photo.jpg"
+
+contact:
+  email: "hallo@partiPrivati.band"
+  instagram: "@partiPrivati"
+  bandcamp: "partiPrivati.bandcamp.com"
+
+formation: "2023"
+location: "Freiburg im Breisgau, Deutschland"
+genre: "Indie Rock / Garage Rock"
