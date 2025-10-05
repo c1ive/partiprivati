@@ -49,12 +49,9 @@ export default function ReleasesPage() {
       {/* Header - Dramatic and Split */}
       <header className="space-huge">
         <div className="position-left">
-          <h1 className="text-massive font-bold ink-splatter">Releases</h1>
-        </div>
-        <div className="position-right space-large">
-          <p className="text-large text-[var(--muted)] handwritten">
-            Our questionable discography
-          </p>
+          <h1 className="text-massive font-bold text-[var(--accent-yellow)]">
+            Releases
+          </h1>
         </div>
       </header>
 
@@ -177,7 +174,7 @@ export default function ReleasesPage() {
         )}
       </main>
 
-      <Footer message="All recordings made with love, duct tape, and too much reverb" />
+      <Footer />
     </div>
   );
 }

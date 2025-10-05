@@ -46,7 +46,7 @@ export default function Home() {
           <div className="relative w-full max-w-[800px]">
             <div className=" ml-[-8px]">
               <Image
-                src="/Wortmarke-6.svg"
+                src="/Wortmarke-zweizeilig-5.svg"
                 alt="Logo"
                 width={800}
                 height={400}
@@ -61,18 +61,6 @@ export default function Home() {
           <div className="text-block-center">
             <p className="text-large leading-relaxed">
               {bandInfo.description.split("\n\n")[0]}
-            </p>
-          </div>
-          <div className="text-block-center space-large">
-            <p className="text-medium leading-relaxed">
-              {bandInfo.description.split("\n\n")[1] ||
-                bandInfo.description.split("\n")[2]}
-            </p>
-          </div>
-          <div className="text-block-center space-large">
-            <p className="text-large leading-relaxed">
-              {bandInfo.description.split("\n\n")[2] ||
-                bandInfo.description.split("\n").slice(-2).join(" ")}
             </p>
           </div>
         </div>

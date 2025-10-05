@@ -34,7 +34,7 @@ export default function EventsPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="typewriter text-large">Loading shows...</div>
+        <div className="typewriter text-large">Konzerte werden geladen...</div>
       </div>
     );
   }
@@ -42,7 +42,9 @@ export default function EventsPage() {
   if (!eventsData) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-red-600 text-large">Failed to load events</div>
+        <div className="text-red-600 text-large">
+          Fehler beim Laden der Konzerte
+        </div>
       </div>
     );
   }
@@ -57,13 +59,23 @@ export default function EventsPage() {
   return (
     <div className="min-h-screen p-6">
       <Navigation />
+
+      {/* Header - Dramatic and Split */}
+      <header className="space-huge">
+        <div className="position-left">
+          <h1 className="text-massive font-bold text-[var(--accent)]">
+            Konzerte
+          </h1>
+        </div>
+      </header>
+
       <main>
         {/* Upcoming Events */}
         {upcomingEvents.length > 0 && (
           <section className="space-huge">
             <div className="space-large flex flex-col items-center">
               {upcomingEvents.map((event, index) => (
-                <div key={index} className="space-large w-full max-w-md">
+                <div key={index} className="space-large w-full max-w-lg">
                   <div className="event-card">
                     <div className="space-small">
                       <div className="flex flex-col gap-2">
@@ -91,7 +103,7 @@ export default function EventsPage() {
                             rel="noopener noreferrer"
                             className="indie-btn text-medium bg-[var(--accent-yellow)] text-black border-black hover:bg-[var(--accent)] hover:text-white"
                           >
-                            Get Tickets
+                            Tickets kaufen
                           </a>
                         )}
                       </div>
@@ -107,16 +119,16 @@ export default function EventsPage() {
         {pastEvents.length > 0 && (
           <section className="space-huge">
             <div className="position-center space-large">
-              <h2 className="text-huge">Past Shows</h2>
+              <h2 className="text-huge">Vergangene Konzerte</h2>
             </div>
             <div className="position-center space-medium">
               <p className="text-medium text-[var(--muted)] handwritten">
-                Thanks to everyone who came out to these shows!
+                Danke an alle, die bei diesen Konzerten dabei waren!
               </p>
             </div>
             <div className="space-large flex flex-col items-center">
               {pastEvents.map((event, index) => (
-                <div key={index} className="space-medium w-full max-w-sm">
+                <div key={index} className="space-medium w-full max-w-md">
                   <div className="event-card opacity-75">
                     <h3 className="text-medium font-bold text-[var(--muted)]">
                       {event.venue} • {event.city}
@@ -138,14 +150,15 @@ export default function EventsPage() {
         {eventsData.events.length === 0 && (
           <div className="text-block-center space-huge">
             <div className="paper-bg p-12">
-              <h2 className="text-huge mb-8">No Shows Scheduled</h2>
+              <h2 className="text-huge mb-8">Keine Konzerte geplant</h2>
               <p className="text-medium text-[var(--muted)] mb-8 handwritten">
-                We're probably in the practice room working on new songs.
+                Wir sind wahrscheinlich im Proberaum und arbeiten an neuen
+                Songs.
                 <br />
-                Check back soon or follow us for updates!
+                Schaut bald wieder vorbei oder folgt uns für Updates!
               </p>
               <Link href="/" className="indie-btn text-large">
-                Back to Home
+                Zurück zur Startseite
               </Link>
             </div>
           </div>
@@ -155,21 +168,21 @@ export default function EventsPage() {
         <div className="space-huge">
           <div className="text-block-wide paper-bg p-12">
             <div className="position-center space-large">
-              <h2 className="text-huge mb-8">Want to Book Us?</h2>
+              <h2 className="text-huge mb-8">Wollt ihr uns buchen?</h2>
             </div>
             <div className="position-center">
               <a
                 href="mailto:hallo@partiPrivati.band"
                 className="indie-btn text-large bg-[var(--accent-yellow)] text-black border-black hover:bg-[var(--accent)] hover:text-white"
               >
-                Get in Touch
+                Kontakt aufnehmen
               </a>
             </div>
           </div>
         </div>
       </main>
 
-      <Footer message="See you in the pit (or the corner of the room if it's an acoustic set)" />
+      <Footer />
     </div>
   );
 }
