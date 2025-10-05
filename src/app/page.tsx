@@ -10,6 +10,31 @@ import Image from "next/image";
 export default function Home() {
   const [bandInfo, setBandInfo] = useState<BandInfo | null>(null);
   const [loading, setLoading] = useState(true);
+  const [currentLogoIndex, setCurrentLogoIndex] = useState(1);
+
+  // Logo flickering effect
+  useEffect(() => {
+    const logoVariants = [2, 3, 4, 5, 6];
+    let intervalId: NodeJS.Timeout;
+
+    const flickerLogo = () => {
+      intervalId = setInterval(() => {
+        setCurrentLogoIndex((prev) => {
+          const currentIndex = logoVariants.indexOf(prev);
+          const nextIndex = (currentIndex + 1) % logoVariants.length;
+          return logoVariants[nextIndex];
+        });
+      }, 600); // Change every 150ms for a nice flicker effect
+    };
+
+    // Start flickering after a short delay
+    const startDelay = setTimeout(flickerLogo, 2000);
+
+    return () => {
+      clearTimeout(startDelay);
+      clearInterval(intervalId);
+    };
+  }, []);
 
   useEffect(() => {
     loadYamlData<BandInfo>("about.yml")
@@ -46,11 +71,12 @@ export default function Home() {
           <div className="relative w-full max-w-[800px]">
             <div className=" ml-[-8px]">
               <Image
-                src="/Wortmarke-zweizeilig-5.svg"
+                src={`/Wortmarke-zweizeilig-${currentLogoIndex}.svg`}
                 alt="Logo"
                 width={800}
                 height={400}
-                className="transition-all duration-500"
+                className="transition-all duration-100"
+                key={currentLogoIndex} // Force re-render for each logo change
               />
             </div>
           </div>
