@@ -309,8 +309,8 @@ body::before {
 }
 
 .text-block-center {
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 }
 
 .text-block-wide {

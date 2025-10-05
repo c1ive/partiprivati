@@ -66,11 +66,11 @@ export default function ReleasesPage() {
             <div key={index} className="space-huge">
               {/* Full width on mobile, alternate between left and right layouts on desktop */}
               <div
-                className={`text-block-center md:${
+                className={`mx-auto md:${
                   index % 2 === 0 ? "text-block-left" : "text-block-right"
                 }`}
               >
-                <div className="release-card">
+                <div className="release-card max-w-4xl mx-auto">
                   {/* Album Art Placeholder */}
                   <div
                     className={`mx-auto md:mx-0 md:${
