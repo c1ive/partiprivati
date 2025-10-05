@@ -44,7 +44,7 @@ export default function Home() {
       <main>
         <div className="flex flex-col items-center my-16">
           <div className="relative w-full max-w-[800px]">
-            <div className="transform transition-all duration-500 hover:-translate-x-16 hover:scale-105 ml-[-8px]">
+            <div className=" ml-[-8px]">
               <Image
                 src="/Wortmarke-6.svg"
                 alt="Logo"
@@ -56,14 +56,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Description - Scattered positioning */}
+        {/* Description - Centered */}
         <div className="text-block space-huge">
-          <div className="text-block-right">
+          <div className="text-block-center">
             <p className="text-large leading-relaxed">
               {bandInfo.description.split("\n\n")[0]}
             </p>
           </div>
-          <div className="text-block-left space-large">
+          <div className="text-block-center space-large">
             <p className="text-medium leading-relaxed">
               {bandInfo.description.split("\n\n")[1] ||
                 bandInfo.description.split("\n")[2]}
@@ -77,10 +77,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Info scattered across page */}
+        {/* Info centered */}
         <div className="space-huge">
-          <div className="position-left space-large">
-            <div className="text-huge text-[var(--accent)]">
+          <div className="position-center space-large">
+            <div className="text-huge text-[var(--accent-yellow)]">
               {bandInfo.formation}
             </div>
             <div className="text-small typewriter">Formed</div>
@@ -90,7 +90,7 @@ export default function Home() {
             <div className="text-large">{bandInfo.location}</div>
           </div>
 
-          <div className="position-right space-large">
+          <div className="position-center space-large">
             <div className="text-medium text-[var(--accent)]">
               {bandInfo.genre}
             </div>
@@ -98,11 +98,13 @@ export default function Home() {
         </div>
 
         {/* Contact - Big block center */}
-        <div className="text-block-wide space-huge paper-bg p-8">
+        <div className="space-huge paper-bg p-8">
           <h2 className="text-huge mb-8 position-center">Get in Touch</h2>
           <div className="space-medium">
-            <div className="position-left">
-              <span className="text-large typewriter">Email:</span>
+            <div className="position-center">
+              <span className="text-large typewriter text-[var(--accent-yellow)]">
+                Email:
+              </span>
               <br />
               <a
                 href={`mailto:${bandInfo.contact.email}`}
@@ -111,8 +113,10 @@ export default function Home() {
                 {bandInfo.contact.email}
               </a>
             </div>
-            <div className="position-right space-medium">
-              <span className="text-large typewriter">Instagram:</span>
+            <div className="position-center space-medium">
+              <span className="text-large typewriter text-[var(--accent-yellow)]">
+                Instagram:
+              </span>
               <br />
               <a
                 href={`https://instagram.com/${bandInfo.contact.instagram.replace(
@@ -127,7 +131,9 @@ export default function Home() {
               </a>
             </div>
             <div className="position-center space-large">
-              <span className="text-large typewriter">Bandcamp:</span>
+              <span className="text-large typewriter text-[var(--accent-yellow)]">
+                Bandcamp:
+              </span>
               <br />
               <a
                 href={`https://${bandInfo.contact.bandcamp}`}
@@ -141,15 +147,21 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Call to Action - Scattered */}
+        {/* Call to Action - Centered */}
         <div className="space-huge">
-          <div className="position-left">
-            <Link href="/events" className="indie-btn text-large">
+          <div className="position-center">
+            <Link
+              href="/events"
+              className="indie-btn text-large bg-[var(--accent-yellow)] text-black border-black hover:bg-[var(--accent)] hover:text-white"
+            >
               Check Live Dates
             </Link>
           </div>
-          <div className="position-right space-medium">
-            <Link href="/releases" className="indie-btn text-large">
+          <div className="position-center space-medium">
+            <Link
+              href="/releases"
+              className="indie-btn text-large bg-[var(--accent-yellow)] text-black border-black hover:bg-[var(--accent)] hover:text-white"
+            >
               Listen to Our Music
             </Link>
           </div>

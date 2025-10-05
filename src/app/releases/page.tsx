@@ -135,7 +135,7 @@ export default function ReleasesPage() {
 
                     {/* Tracklist */}
                     <div className="clear-both">
-                      <h3 className="text-large font-bold mb-4 text-[var(--accent)]">
+                      <h3 className="text-large font-bold mb-4 text-[var(--accent-yellow)]">
                         Tracklist
                       </h3>
                       <ol className="space-small">
@@ -175,54 +175,6 @@ export default function ReleasesPage() {
             </div>
           </div>
         )}
-
-        {/* Support Section - Wide and dramatic */}
-        <div className="space-huge">
-          <div className="text-block-wide paper-bg p-12">
-            <div className="position-center space-large">
-              <h2 className="text-huge mb-8">Support Us</h2>
-            </div>
-            <div className="text-block-center space-medium">
-              <p className="text-large text-[var(--muted)] mb-8 handwritten">
-                Buy our music on Bandcamp, stream us on Spotify, or just tell
-                your friends.
-                <br />
-                Every listen helps us afford more questionable recording
-                equipment.
-              </p>
-            </div>
-            <div className="position-center space-medium">
-              <a
-                href="https://partiPrivati.bandcamp.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="indie-btn text-large mr-6"
-              >
-                Bandcamp
-              </a>
-              <Link href="/events" className="indie-btn text-large">
-                Come to a Show
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Recording Philosophy - Scattered */}
-        <div className="space-huge">
-          <div className="position-scattered space-large">
-            <div className="event-card">
-              <h3 className="text-large text-[var(--accent)] mb-4">
-                Recording Philosophy
-              </h3>
-              <p className="typewriter text-medium text-[var(--muted)] mb-4">
-                "If it sounds too clean, we're doing it wrong"
-              </p>
-              <p className="typewriter text-small text-[var(--muted)]">
-                <em>- Our very scientific approach to music production</em>
-              </p>
-            </div>
-          </div>
-        </div>
       </main>
 
       <Footer message="All recordings made with love, duct tape, and too much reverb" />

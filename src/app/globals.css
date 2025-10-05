@@ -3,8 +3,9 @@
 
 :root {
   --background: #f7f5f3;
-  --foreground: #2d2926;
+  --foreground: #303030;
   --accent: #ff0086;
+  --accent-yellow: #fffc00;
   --muted: #7a5bf1;
   --paper: #57edd8;
 }
@@ -12,10 +13,11 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #1a1714;
-    --foreground: #e8e3de;
+    --foreground: #ffffff;
     --accent: #ff0086;
-    --muted: #7a5bf1;
-    --paper: #57edd8;
+    --accent-yellow: #fffc00;
+    --muted: #57edd8;
+    --paper: #7a5bf1;
   }
 }
 
@@ -233,7 +235,7 @@ body {
   position: absolute;
   top: -5px;
   right: -8px;
-  color: var(--accent);
+  color: var(--accent-yellow);
   font-size: 20px;
 }
 
@@ -247,7 +249,7 @@ body {
 }
 
 .nav-link:hover {
-  color: var(--accent);
+  color: var(--accent-yellow);
 }
 
 .nav-link::after {
@@ -257,7 +259,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent);
+  background: var(--accent-yellow);
   transition: width 0.3s ease;
 }
 
@@ -305,7 +307,7 @@ body {
 .event-card {
   background: var(--paper);
   border: 1px solid #d4af3750;
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--accent-yellow);
   margin: 1rem auto;
   padding: 1rem;
   transition: transform 0.2s ease;
@@ -332,7 +334,7 @@ body {
   left: 10px;
   right: 10px;
   bottom: 10px;
-  border: 1px dashed var(--accent);
+  border: 1px dashed var(--accent-yellow);
   pointer-events: none;
 }
 

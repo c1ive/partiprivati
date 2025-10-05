@@ -57,46 +57,19 @@ export default function EventsPage() {
   return (
     <div className="min-h-screen p-6">
       <Navigation />
-
-      {/* Header - Massive */}
-      <header className="space-huge">
-        <div className="position-center space-medium">
-          <h1 className="roboto-black text-huge">Live Shows</h1>
-        </div>
-      </header>
-
       <main>
         {/* Upcoming Events */}
         {upcomingEvents.length > 0 && (
           <section className="space-huge">
-            <div className="position-center space-large">
-              <h2 className="text-huge">Upcoming Shows</h2>
-            </div>
-            <div className="space-large">
+            <div className="space-large flex flex-col items-center">
               {upcomingEvents.map((event, index) => (
-                <div
-                  key={index}
-                  className={`space-large ${
-                    index % 2 === 0 ? "text-block-left" : "text-block-right"
-                  }`}
-                >
+                <div key={index} className="space-large w-full max-w-md">
                   <div className="event-card">
-                    <div className="space-medium">
-                      <div className="flex flex-col gap-2 mb-4">
+                    <div className="space-small">
+                      <div className="flex flex-col gap-2">
                         <h3 className="text-large font-bold text-[var(--accent)]">
                           {event.venue}
                         </h3>
-                        <span
-                          className={`px-3 py-1 text-small rounded typewriter inline-block w-fit ${
-                            event.status === "confirmed"
-                              ? "bg-green-100 text-green-800"
-                              : event.status === "tentative"
-                              ? "bg-yellow-100 text-yellow-800"
-                              : "bg-red-100 text-red-800"
-                          }`}
-                        >
-                          {event.status}
-                        </span>
                       </div>
                       <p className="text-medium text-[var(--muted)] typewriter mb-4">
                         {formatDate(event.date)}
@@ -104,10 +77,10 @@ export default function EventsPage() {
                       <p className="text-small typewriter mb-2">
                         {event.time} • {event.city}
                       </p>
-                      <p className="text-medium mb-6 handwritten">
+                      <p className="text-medium mb-3 handwritten">
                         {event.description}
                       </p>
-                      <div className="flex flex-col gap-3">
+                      <div className="flex flex-col gap-2">
                         <span className="text-large font-bold text-[var(--accent)]">
                           {event.price}
                         </span>
@@ -116,7 +89,7 @@ export default function EventsPage() {
                             href={event.ticketLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="indie-btn text-medium"
+                            className="indie-btn text-medium bg-[var(--accent-yellow)] text-black border-black hover:bg-[var(--accent)] hover:text-white"
                           >
                             Get Tickets
                           </a>
@@ -133,7 +106,7 @@ export default function EventsPage() {
         {/* Past Events */}
         {pastEvents.length > 0 && (
           <section className="space-huge">
-            <div className="position-scattered-right space-large">
+            <div className="position-center space-large">
               <h2 className="text-huge">Past Shows</h2>
             </div>
             <div className="position-center space-medium">
@@ -141,18 +114,9 @@ export default function EventsPage() {
                 Thanks to everyone who came out to these shows!
               </p>
             </div>
-            <div className="space-large">
+            <div className="space-large flex flex-col items-center">
               {pastEvents.map((event, index) => (
-                <div
-                  key={index}
-                  className={`space-medium ${
-                    index % 3 === 0
-                      ? "position-left"
-                      : index % 3 === 1
-                      ? "position-center"
-                      : "position-right"
-                  }`}
-                >
+                <div key={index} className="space-medium w-full max-w-sm">
                   <div className="event-card opacity-75">
                     <h3 className="text-medium font-bold text-[var(--muted)]">
                       {event.venue} • {event.city}
@@ -193,18 +157,10 @@ export default function EventsPage() {
             <div className="position-center space-large">
               <h2 className="text-huge mb-8">Want to Book Us?</h2>
             </div>
-            <div className="text-block-center space-medium">
-              <p className="text-large text-[var(--muted)] mb-8 handwritten">
-                We play dive bars, house parties, and questionable venues.
-                <br />
-                If you have a stage (or just some floor space), we're
-                interested.
-              </p>
-            </div>
             <div className="position-center">
               <a
                 href="mailto:hallo@partiPrivati.band"
-                className="indie-btn text-large"
+                className="indie-btn text-large bg-[var(--accent-yellow)] text-black border-black hover:bg-[var(--accent)] hover:text-white"
               >
                 Get in Touch
               </a>
