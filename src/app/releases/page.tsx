@@ -1,15 +1,17 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { loadYamlData, type ReleasesData } from '@/lib/yaml-loader';
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { loadYamlData, type ReleasesData } from "@/lib/yaml-loader";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export default function ReleasesPage() {
   const [releasesData, setReleasesData] = useState<ReleasesData | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    loadYamlData<ReleasesData>('releases.yml')
+    loadYamlData<ReleasesData>("releases.yml")
       .then(setReleasesData)
       .catch(console.error)
       .finally(() => setLoading(false));
@@ -17,10 +19,10 @@ export default function ReleasesPage() {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('de-DE', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
+    return date.toLocaleDateString("de-DE", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
   };
 
@@ -42,34 +44,15 @@ export default function ReleasesPage() {
 
   return (
     <div className="min-h-screen p-6">
-      {/* Navigation - Scattered */}
-      <nav className="mb-12">
-        <div className="position-left space-medium">
-          <Link href="/" className="nav-link text-medium">
-            Home
-          </Link>
-        </div>
-        <div className="position-center space-small">
-          <Link href="/events" className="nav-link text-medium">
-            Live
-          </Link>
-        </div>
-        <div className="position-right space-medium">
-          <Link href="/releases" className="nav-link text-large text-[var(--accent)]">
-            Releases
-          </Link>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Header - Dramatic and Split */}
       <header className="space-huge">
         <div className="position-left">
-          <h1 className="text-massive font-bold rotate-1 ink-splatter">
-            Releases
-          </h1>
+          <h1 className="text-massive font-bold ink-splatter">Releases</h1>
         </div>
         <div className="position-right space-large">
-          <p className="text-large text-[var(--muted)] handwritten rotate-2">
+          <p className="text-large text-[var(--muted)] handwritten">
             Our questionable discography
           </p>
         </div>
@@ -81,12 +64,22 @@ export default function ReleasesPage() {
           {releasesData.releases.map((release, index) => (
             <div key={index} className="space-huge">
               {/* Alternate between left and right layouts */}
-              <div className={`${index % 2 === 0 ? 'text-block-left' : 'text-block-right'}`}>
+              <div
+                className={`${
+                  index % 2 === 0 ? "text-block-left" : "text-block-right"
+                }`}
+              >
                 <div className="release-card">
                   {/* Album Art Placeholder */}
-                  <div className={`${index % 2 === 0 ? 'float-left' : 'float-right'} w-60 h-60 paper-bg rough-border rotate-1 flex items-center justify-center mb-6`}>
+                  <div
+                    className={`${
+                      index % 2 === 0 ? "float-left" : "float-right"
+                    } w-60 h-60 paper-bg rough-border flex items-center justify-center mb-6`}
+                  >
                     <span className="text-[var(--muted)] typewriter text-center text-small">
-                      [{release.title}<br />Cover Art]
+                      [{release.title}
+                      <br />
+                      Cover Art]
                     </span>
                   </div>
 
@@ -100,12 +93,17 @@ export default function ReleasesPage() {
                         {release.type}
                       </span>
                       <p className="text-medium text-[var(--muted)] typewriter mt-4 mb-6">
-                        Released {formatDate(release.releaseDate)} • {release.tracks} track{release.tracks !== 1 ? 's' : ''}
+                        Released {formatDate(release.releaseDate)} •{" "}
+                        {release.tracks} track{release.tracks !== 1 ? "s" : ""}
                       </p>
                       <div className="text-large leading-relaxed handwritten mb-6">
-                        {release.description.split('\n').map((line, lineIndex) => (
-                          <p key={lineIndex} className="mb-4">{line}</p>
-                        ))}
+                        {release.description
+                          .split("\n")
+                          .map((line, lineIndex) => (
+                            <p key={lineIndex} className="mb-4">
+                              {line}
+                            </p>
+                          ))}
                       </div>
                     </div>
 
@@ -113,7 +111,7 @@ export default function ReleasesPage() {
                     {(release.links.bandcamp || release.links.spotify) && (
                       <div className="mb-8 space-small">
                         {release.links.bandcamp && (
-                          <a 
+                          <a
                             href={release.links.bandcamp}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -123,7 +121,7 @@ export default function ReleasesPage() {
                           </a>
                         )}
                         {release.links.spotify && (
-                          <a 
+                          <a
                             href={release.links.spotify}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -142,7 +140,10 @@ export default function ReleasesPage() {
                       </h3>
                       <ol className="space-small">
                         {release.tracklist.map((track, trackIndex) => (
-                          <li key={trackIndex} className="typewriter flex text-medium mb-2">
+                          <li
+                            key={trackIndex}
+                            className="typewriter flex text-medium mb-2"
+                          >
                             <span className="text-[var(--muted)] mr-4 min-w-[3rem]">
                               {trackIndex + 1}.
                             </span>
@@ -161,7 +162,7 @@ export default function ReleasesPage() {
         {/* No Releases Message */}
         {releasesData.releases.length === 0 && (
           <div className="text-block-center space-huge">
-            <div className="paper-bg p-12 rotate-1">
+            <div className="paper-bg p-12">
               <h2 className="text-huge mb-8">No Releases Yet</h2>
               <p className="text-medium text-[var(--muted)] mb-8 handwritten">
                 We're still figuring out how to record things properly.
@@ -177,19 +178,21 @@ export default function ReleasesPage() {
 
         {/* Support Section - Wide and dramatic */}
         <div className="space-huge">
-          <div className="text-block-wide paper-bg p-12 rotate-2">
+          <div className="text-block-wide paper-bg p-12">
             <div className="position-center space-large">
               <h2 className="text-huge mb-8">Support Us</h2>
             </div>
             <div className="text-block-center space-medium">
               <p className="text-large text-[var(--muted)] mb-8 handwritten">
-                Buy our music on Bandcamp, stream us on Spotify, or just tell your friends.
+                Buy our music on Bandcamp, stream us on Spotify, or just tell
+                your friends.
                 <br />
-                Every listen helps us afford more questionable recording equipment.
+                Every listen helps us afford more questionable recording
+                equipment.
               </p>
             </div>
             <div className="position-center space-medium">
-              <a 
+              <a
                 href="https://partiPrivati.bandcamp.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -208,7 +211,9 @@ export default function ReleasesPage() {
         <div className="space-huge">
           <div className="position-scattered space-large">
             <div className="event-card">
-              <h3 className="text-large text-[var(--accent)] mb-4">Recording Philosophy</h3>
+              <h3 className="text-large text-[var(--accent)] mb-4">
+                Recording Philosophy
+              </h3>
               <p className="typewriter text-medium text-[var(--muted)] mb-4">
                 "If it sounds too clean, we're doing it wrong"
               </p>
@@ -220,12 +225,7 @@ export default function ReleasesPage() {
         </div>
       </main>
 
-      {/* Footer - Small and scattered */}
-      <footer className="mt-16 position-right">
-        <p className="text-[var(--muted)] typewriter text-tiny">
-          All recordings made with love, duct tape, and too much reverb
-        </p>
-      </footer>
+      <Footer message="All recordings made with love, duct tape, and too much reverb" />
     </div>
   );
 }

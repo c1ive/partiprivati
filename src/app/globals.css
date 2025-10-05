@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import "tailwindcss";
 
 :root {
   --background: #f7f5f3;
   --foreground: #2d2926;
-  --accent: #b8860b;
-  --muted: #8b7355;
-  --paper: #faf8f5;
+  --accent: #ff0086;
+  --muted: #7a5bf1;
+  --paper: #57edd8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,7 +22,8 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Kalam", cursive;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
   background-image: radial-gradient(
       circle at 20px 80px,
       #2d292620 1px,
@@ -76,15 +77,45 @@ body {
   }
 }
 
-/* Indie/handwritten aesthetic elements */
-.handwritten {
-  font-family: "Kalam", cursive;
+.typewriter {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+/* Roboto font weight classes */
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
 
-.typewriter {
-  font-family: "Roboto", monospace;
-  font-weight: 300;
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+}
+
+.roboto-italic {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
 }
 
 /* Dynamic positioning classes */
@@ -99,13 +130,13 @@ body {
 }
 
 .position-left {
-  text-align: left;
-  margin-left: 5vw;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .position-right {
-  text-align: right;
-  margin-right: 5vw;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .position-center {
@@ -114,14 +145,13 @@ body {
 }
 
 .position-scattered {
-  transform: rotate(-2deg);
-  margin-left: 10vw;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .position-scattered-right {
-  transform: rotate(1.5deg);
-  margin-right: 8vw;
-  text-align: right;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Broken layout blocks */
@@ -185,7 +215,6 @@ body {
   bottom: -2px;
   border: 1px solid var(--accent);
   border-radius: 0;
-  transform: rotate(-0.5deg);
   z-index: -1;
 }
 
@@ -206,7 +235,6 @@ body {
   right: -8px;
   color: var(--accent);
   font-size: 20px;
-  transform: rotate(15deg);
 }
 
 /* Navigation styling */
@@ -220,7 +248,6 @@ body {
 
 .nav-link:hover {
   color: var(--accent);
-  transform: rotate(-1deg);
 }
 
 .nav-link::after {
@@ -243,19 +270,19 @@ body {
   background: var(--paper);
   border: 2px solid var(--foreground);
   color: var(--foreground);
-  font-family: "Kalam", cursive;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   padding: 8px 16px;
-  transform: rotate(-0.5deg);
   transition: all 0.2s ease;
   text-decoration: none;
   display: inline-block;
+  text-align: center;
 }
 
 .indie-btn:hover {
   background: var(--accent);
   color: var(--background);
-  transform: rotate(0deg) scale(1.05);
+  transform: scale(1.05);
 }
 
 /* Rough text effects */
@@ -271,7 +298,7 @@ body {
   right: -5px;
   height: 1px;
   background: var(--accent);
-  transform: translateY(-50%) rotate(-0.5deg);
+  transform: translateY(-50%);
 }
 
 /* Card styling */
@@ -279,27 +306,23 @@ body {
   background: var(--paper);
   border: 1px solid #d4af3750;
   border-left: 4px solid var(--accent);
-  margin: 1rem 0;
+  margin: 1rem auto;
   padding: 1rem;
-  transform: rotate(0.3deg);
   transition: transform 0.2s ease;
-}
-
-.event-card:nth-child(even) {
-  transform: rotate(-0.2deg);
+  text-align: center;
 }
 
 .event-card:hover {
-  transform: rotate(0deg) scale(1.02);
+  transform: scale(1.02);
 }
 
 .release-card {
   background: var(--paper);
   border: 2px solid var(--muted);
   padding: 1.5rem;
-  margin: 1rem 0;
+  margin: 1rem auto;
   position: relative;
-  transform: rotate(-0.1deg);
+  text-align: center;
 }
 
 .release-card::before {
@@ -317,8 +340,8 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Kalam", cursive;
-  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
   line-height: 1.1;
   margin: 0;
 }
@@ -364,13 +387,15 @@ p {
   }
 }
 
-/* Utility classes */
-.rotate-1 {
-  transform: rotate(1deg);
+/* Utility classes - centered */
+.center {
+  text-align: center;
+  margin: 0 auto;
 }
-.rotate-2 {
-  transform: rotate(-1deg);
+.center-block {
+  display: block;
+  margin: 0 auto;
 }
-.rotate-3 {
-  transform: rotate(0.5deg);
+.text-center {
+  text-align: center;
 }
