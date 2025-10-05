@@ -29,7 +29,9 @@ export default function ReleasesPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="typewriter text-large">Loading discography...</div>
+        <div className="typewriter text-large md:text-large text-medium">
+          Loading discography...
+        </div>
       </div>
     );
   }
@@ -37,7 +39,9 @@ export default function ReleasesPage() {
   if (!releasesData) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-red-600 text-large">Failed to load releases</div>
+        <div className="text-red-600 text-large md:text-large text-medium">
+          Failed to load releases
+        </div>
       </div>
     );
   }
@@ -47,9 +51,9 @@ export default function ReleasesPage() {
       <Navigation />
 
       {/* Header - Dramatic and Split */}
-      <header className="space-huge">
-        <div className="position-left">
-          <h1 className="text-massive font-bold text-[var(--accent-yellow)]">
+      <header className="space-medium">
+        <div className="position-center md:position-left">
+          <h1 className="text-massive md:text-massive text-huge font-bold text-[var(--accent-yellow)]">
             Releases
           </h1>
         </div>
@@ -57,23 +61,23 @@ export default function ReleasesPage() {
 
       <main>
         {/* Releases - Varied layouts */}
-        <div className="space-huge">
+        <div className="space-medium">
           {releasesData.releases.map((release, index) => (
             <div key={index} className="space-huge">
-              {/* Alternate between left and right layouts */}
+              {/* Full width on mobile, alternate between left and right layouts on desktop */}
               <div
-                className={`${
+                className={`text-block-center md:${
                   index % 2 === 0 ? "text-block-left" : "text-block-right"
                 }`}
               >
                 <div className="release-card">
                   {/* Album Art Placeholder */}
                   <div
-                    className={`${
+                    className={`mx-auto md:mx-0 md:${
                       index % 2 === 0 ? "float-left" : "float-right"
                     } w-60 h-60 paper-bg rough-border flex items-center justify-center mb-6`}
                   >
-                    <span className="text-[var(--muted)] typewriter text-center text-small">
+                    <span className="text-[var(--muted)] typewriter text-center text-small md:text-small text-tiny">
                       [{release.title}
                       <br />
                       Cover Art]
@@ -83,17 +87,17 @@ export default function ReleasesPage() {
                   {/* Release Info */}
                   <div className="space-medium">
                     <div className="mb-6">
-                      <h2 className="text-huge font-bold text-[var(--accent)] mb-2">
+                      <h2 className="text-huge md:text-huge text-large font-bold text-[var(--accent)] mb-2">
                         {release.title}
                       </h2>
-                      <span className="px-4 py-2 bg-[var(--muted)] text-white text-medium typewriter rounded inline-block">
+                      <span className="px-4 py-2 bg-[var(--muted)] text-white text-medium md:text-medium text-small typewriter rounded inline-block">
                         {release.type}
                       </span>
-                      <p className="text-medium text-[var(--muted)] typewriter mt-4 mb-6">
+                      <p className="text-medium md:text-medium text-small text-[var(--muted)] typewriter mt-4 mb-6">
                         Released {formatDate(release.releaseDate)} •{" "}
                         {release.tracks} track{release.tracks !== 1 ? "s" : ""}
                       </p>
-                      <div className="text-large leading-relaxed handwritten mb-6">
+                      <div className="text-large md:text-large text-medium leading-relaxed handwritten mb-6">
                         {release.description
                           .split("\n")
                           .map((line, lineIndex) => (
@@ -112,7 +116,7 @@ export default function ReleasesPage() {
                             href={release.links.bandcamp}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="indie-btn text-medium mr-4"
+                            className="indie-btn text-medium md:text-medium text-small mr-4"
                           >
                             Bandcamp
                           </a>
@@ -122,7 +126,7 @@ export default function ReleasesPage() {
                             href={release.links.spotify}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="indie-btn text-medium"
+                            className="indie-btn text-medium md:text-medium text-small"
                           >
                             Spotify
                           </a>
@@ -132,14 +136,14 @@ export default function ReleasesPage() {
 
                     {/* Tracklist */}
                     <div className="clear-both">
-                      <h3 className="text-large font-bold mb-4 text-[var(--accent-yellow)]">
+                      <h3 className="text-large md:text-large text-medium font-bold mb-4 text-[var(--accent-yellow)]">
                         Tracklist
                       </h3>
                       <ol className="space-small">
                         {release.tracklist.map((track, trackIndex) => (
                           <li
                             key={trackIndex}
-                            className="typewriter flex text-medium mb-2"
+                            className="typewriter flex text-small sm:text-large md:text-large mb-2"
                           >
                             <span className="text-[var(--muted)] mr-4 min-w-[3rem]">
                               {trackIndex + 1}.
@@ -160,13 +164,18 @@ export default function ReleasesPage() {
         {releasesData.releases.length === 0 && (
           <div className="text-block-center space-huge">
             <div className="paper-bg p-12">
-              <h2 className="text-huge mb-8">No Releases Yet</h2>
-              <p className="text-medium text-[var(--muted)] mb-8 handwritten">
+              <h2 className="text-huge md:text-huge text-large mb-8">
+                No Releases Yet
+              </h2>
+              <p className="text-medium md:text-medium text-small text-[var(--muted)] mb-8 handwritten">
                 We're still figuring out how to record things properly.
                 <br />
                 Check back soon for some extremely lo-fi indie goodness!
               </p>
-              <Link href="/" className="indie-btn text-large">
+              <Link
+                href="/"
+                className="indie-btn text-large md:text-large text-medium"
+              >
                 Back to Home
               </Link>
             </div>

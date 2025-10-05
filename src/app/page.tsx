@@ -10,31 +10,7 @@ import Image from "next/image";
 export default function Home() {
   const [bandInfo, setBandInfo] = useState<BandInfo | null>(null);
   const [loading, setLoading] = useState(true);
-  const [currentLogoIndex, setCurrentLogoIndex] = useState(1);
-
-  // Logo flickering effect
-  useEffect(() => {
-    const logoVariants = [2, 3, 4, 5, 6];
-    let intervalId: NodeJS.Timeout;
-
-    const flickerLogo = () => {
-      intervalId = setInterval(() => {
-        setCurrentLogoIndex((prev) => {
-          const currentIndex = logoVariants.indexOf(prev);
-          const nextIndex = (currentIndex + 1) % logoVariants.length;
-          return logoVariants[nextIndex];
-        });
-      }, 600); // Change every 150ms for a nice flicker effect
-    };
-
-    // Start flickering after a short delay
-    const startDelay = setTimeout(flickerLogo, 2000);
-
-    return () => {
-      clearTimeout(startDelay);
-      clearInterval(intervalId);
-    };
-  }, []);
+  const [currentColorIndex, setCurrentColorIndex] = useState(0);
 
   useEffect(() => {
     loadYamlData<BandInfo>("about.yml")
@@ -71,12 +47,11 @@ export default function Home() {
           <div className="relative w-full max-w-[800px]">
             <div className=" ml-[-8px]">
               <Image
-                src={`/Wortmarke-zweizeilig-${currentLogoIndex}.svg`}
+                src="/Wortmarke-zweizeilig-6.svg"
                 alt="Logo"
                 width={800}
                 height={400}
-                className="transition-all duration-100"
-                key={currentLogoIndex} // Force re-render for each logo change
+                className="transition-all duration-300"
               />
             </div>
           </div>
@@ -85,7 +60,7 @@ export default function Home() {
         {/* Description - Centered */}
         <div className="text-block space-huge">
           <div className="text-block-center">
-            <p className="text-large leading-relaxed">
+            <p className="text-medium md:text-large leading-relaxed">
               {bandInfo.description.split("\n\n")[0]}
             </p>
           </div>
@@ -94,18 +69,20 @@ export default function Home() {
         {/* Info centered */}
         <div className="space-huge">
           <div className="position-center space-large">
-            <div className="text-huge text-[var(--accent-yellow)]">
+            <div className="text-huge md:text-huge text-large text-[var(--accent-yellow)]">
               {bandInfo.formation}
             </div>
             <div className="text-small typewriter">Formed</div>
           </div>
 
           <div className="position-center space-large">
-            <div className="text-large">{bandInfo.location}</div>
+            <div className="text-large md:text-large text-medium">
+              {bandInfo.location}
+            </div>
           </div>
 
           <div className="position-center space-large">
-            <div className="text-medium text-[var(--accent)]">
+            <div className="text-medium md:text-medium text-small text-[var(--accent)]">
               {bandInfo.genre}
             </div>
           </div>
@@ -113,22 +90,24 @@ export default function Home() {
 
         {/* Contact - Big block center */}
         <div className="space-huge paper-bg p-8">
-          <h2 className="text-huge mb-8 position-center">Get in Touch</h2>
+          <h2 className="text-huge md:text-huge text-large mb-8 position-center">
+            Get in Touch
+          </h2>
           <div className="space-medium">
             <div className="position-center">
-              <span className="text-large typewriter text-[var(--accent-yellow)]">
+              <span className="text-large md:text-large text-medium typewriter text-[var(--accent-yellow)]">
                 Email:
               </span>
               <br />
               <a
                 href={`mailto:${bandInfo.contact.email}`}
-                className="text-medium text-[var(--accent)] hover:underline"
+                className="text-medium md:text-medium text-small text-[var(--accent)] hover:underline"
               >
                 {bandInfo.contact.email}
               </a>
             </div>
             <div className="position-center space-medium">
-              <span className="text-large typewriter text-[var(--accent-yellow)]">
+              <span className="text-large md:text-large text-medium typewriter text-[var(--accent-yellow)]">
                 Instagram:
               </span>
               <br />
@@ -137,7 +116,7 @@ export default function Home() {
                   "@",
                   ""
                 )}`}
-                className="text-medium text-[var(--accent)] hover:underline"
+                className="text-medium md:text-medium text-small text-[var(--accent)] hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -145,13 +124,13 @@ export default function Home() {
               </a>
             </div>
             <div className="position-center space-large">
-              <span className="text-large typewriter text-[var(--accent-yellow)]">
+              <span className="text-large md:text-large text-medium typewriter text-[var(--accent-yellow)]">
                 Bandcamp:
               </span>
               <br />
               <a
                 href={`https://${bandInfo.contact.bandcamp}`}
-                className="text-medium text-[var(--accent)] hover:underline"
+                className="text-medium md:text-medium text-small text-[var(--accent)] hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -166,7 +145,7 @@ export default function Home() {
           <div className="position-center">
             <Link
               href="/events"
-              className="indie-btn text-large bg-[var(--accent-yellow)] text-black border-black hover:bg-[var(--accent)] hover:text-white"
+              className="indie-btn text-large md:text-large text-medium bg-[var(--accent-yellow)] text-black border-black hover:bg-[var(--accent)] hover:text-white"
             >
               Check Live Dates
             </Link>
@@ -174,7 +153,7 @@ export default function Home() {
           <div className="position-center space-medium">
             <Link
               href="/releases"
-              className="indie-btn text-large bg-[var(--accent-yellow)] text-black border-black hover:bg-[var(--accent)] hover:text-white"
+              className="indie-btn text-large md:text-large text-medium bg-[var(--accent-yellow)] text-black border-black hover:bg-[var(--accent)] hover:text-white"
             >
               Listen to Our Music
             </Link>

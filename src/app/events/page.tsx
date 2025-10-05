@@ -61,7 +61,7 @@ export default function EventsPage() {
       <Navigation />
 
       {/* Header - Dramatic and Split */}
-      <header className="space-huge">
+      <header className="space-medium">
         <div className="position-left">
           <h1 className="text-massive font-bold text-[var(--accent)]">
             Konzerte
@@ -72,7 +72,7 @@ export default function EventsPage() {
       <main>
         {/* Upcoming Events */}
         {upcomingEvents.length > 0 && (
-          <section className="space-huge">
+          <section>
             <div className="space-large flex flex-col items-center">
               {upcomingEvents.map((event, index) => (
                 <div key={index} className="space-large w-full max-w-lg">
