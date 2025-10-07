@@ -41,9 +41,9 @@ export default function ImpressumPage() {
               <div className="mb-6">
                 <h3 className="text-medium font-bold mb-2">Kontakt:</h3>
                 <p className="text-small text-[var(--muted)]">
-                  E-Mail: hallo@partiPrivati.band
+                  E-Mail: info@partiprivati-band.de
                   <br />
-                  Instagram: @partiPrivati
+                  Instagram: @partiprivati_band
                 </p>
               </div>
 
