@@ -1,2 +1,9 @@
 # Live Events & Shows
 events:
+- date: “2025-11-15”
+  venue: “demo cafè”
+  city: “Test”
+  description: “test”
+  ticketLink: “”
+  price: “”
+  status: “confirmed”
