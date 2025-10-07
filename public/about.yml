@@ -1,19 +1,13 @@
 # Band Information
-bandName: "PartiPrivati"
-tagline: "Indie Rock aus Freiburg"
-description: |
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-  Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.
-  Omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus.
-  Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus.
-
-  At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos.
-  Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat.
+bandName: "partiprivati"
+tagline: ""
+description:
+  Partiprivati ist eine junge Indiepop-Band aus Freiburg. Mal nachdenklich und ernst, mal ironisch und
+  aufgedreht verarbeiten sie in ihren Liedern persönliche und gesellschaftliche Themen. Ihr
+  abwechslungsreicher Sound entsteht durch die besondere Besetzung: Gesang, Cello, Klavier und
+  Synths verschmelzen zu detailreichen Arrangements – beeinflusst von Klassik, Jazz und Pop.
+  Mit ihrer Musik schafft Partiprivati Räume für Nähe – zu sich selbst, zu den eigenen Gefühlen und
+  Gedanken, und zu den Menschen um einen herum.
 
 image: "/band-photo.jpg"
 
