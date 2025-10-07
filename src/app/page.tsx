@@ -123,20 +123,6 @@ export default function Home() {
                 {bandInfo.contact.instagram}
               </a>
             </div>
-            <div className="position-center space-large">
-              <span className="text-large md:text-large text-medium typewriter text-[var(--accent-yellow)]">
-                Bandcamp:
-              </span>
-              <br />
-              <a
-                href={`https://${bandInfo.contact.bandcamp}`}
-                className="text-medium md:text-medium text-small text-[var(--accent)] hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {bandInfo.contact.bandcamp}
-              </a>
-            </div>
           </div>
         </div>
 
