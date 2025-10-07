@@ -53,7 +53,7 @@ export default function Footer({ className = "mt-16" }: FooterProps) {
         {/* Bottom section with copyright and legal */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-tiny text-[var(--muted)] typewriter border-t border-[var(--muted)] pt-4">
           <div className="text-center md:text-left">
-            © 2025 PartiPrivati. Alle Rechte vorbehalten.
+            © 2025 partiprivati. Alle Rechte vorbehalten.
           </div>
 
           <div className="flex gap-4 text-center">
