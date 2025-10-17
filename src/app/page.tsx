@@ -57,9 +57,23 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="flex flex-col items-center my-16">
+          <div className="relative w-full max-w-[800px]">
+            <div className=" ml-[-8px]">
+              <Image
+                src="/band.png"
+                alt="Logo"
+                width={800}
+                height={400}
+                className="transition-all duration-300"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Description - Centered */}
-        <div className="text-block space-huge">
-          <div className="text-block-center">
+        <div className="space-huge">
+          <div className="max-w-[500px] mx-auto">
             <p className="text-medium md:text-large leading-relaxed">
               {bandInfo.description.split("\n\n")[0]}
             </p>
@@ -69,10 +83,10 @@ export default function Home() {
         {/* Info centered */}
         <div className="space-huge">
           <div className="position-center space-large">
+            <div className="text-small typewriter">Gegründet</div>
             <div className="text-huge md:text-huge text-large text-[var(--accent-yellow)]">
               {bandInfo.formation}
             </div>
-            <div className="text-small typewriter">Formed</div>
           </div>
 
           <div className="position-center space-large">

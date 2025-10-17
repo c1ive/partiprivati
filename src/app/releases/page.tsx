@@ -82,17 +82,18 @@ export default function ReleasesPage() {
                       <br />
                       Cover Art]
                     </span>
-                  </div> */}
-                  <iframe
-                    src={release.embedLink}
-                    width="100%"
-                    height="152"
-                    frameBorder="0"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"
-                  />
+                  
 
                   {/* Release Info */}
+                  <div className="mx-auto md:mx-0 w-full max-w-[15rem] md:w-60 aspect-square mb-6 overflow-hidden rounded">
+                    <iframe
+                      src={release.embedLink}
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                      loading="lazy"
+                    />
+                  </div>
                   <div className="space-medium">
                     <div className="mb-6">
                       <h2 className="text-huge md:text-huge text-large font-bold text-[var(--accent)] mb-2">
