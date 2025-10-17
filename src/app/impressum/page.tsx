@@ -30,12 +30,12 @@ export default function ImpressumPage() {
                 <h3 className="text-medium font-bold mb-2">
                   Verantwortlich für den Inhalt:
                 </h3>
-                <p className="text-medium mb-2">Die PartiPrivati</p>
-                <p className="text-small text-[var(--muted)]">
-                  Indie Band aus Freiburg im Breisgau
-                  <br />
-                  Deutschland
-                </p>
+                <p className="text-medium mb-2">Partiprivati GbR</p>
+                <p className="text-medium mb-2">Carl-Kistner-Straße 66</p>
+                <p className="text-medium mb-2">Haslach</p>
+                <p className="text-medium mb-2">79115 Freiburg im Breisgau</p>
+                <p className="text-medium mb-2">Deutschland</p>
+                <p className="text-medium mb-2">USt-IdNr.: DE453428120</p>
               </div>
 
               <div className="mb-6">
