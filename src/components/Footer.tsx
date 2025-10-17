@@ -13,7 +13,7 @@ export default function Footer({ className = "mt-16" }: FooterProps) {
           {/* Social Media Icons */}
           <div className="flex gap-4">
             <a
-              href="https://instagram.com/partiprivati-band"
+              href="https://instagram.com/partiprivati_band"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--foreground)] hover:text-[var(--accent-yellow)] transition-colors duration-200"

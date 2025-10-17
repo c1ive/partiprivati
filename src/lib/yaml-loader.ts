@@ -49,14 +49,8 @@ export interface Release {
   title: string;
   type: "EP" | "Album" | "Single" | "Live Recording";
   releaseDate: string;
-  tracks: number;
   description: string;
-  cover: string;
-  links: {
-    bandcamp?: string;
-    spotify?: string;
-  };
-  tracklist: string[];
+  embedLink: string;
 }
 
 export interface ReleasesData {

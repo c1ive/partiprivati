@@ -71,7 +71,7 @@ export default function ReleasesPage() {
                 }`}
               >
                 <div className="release-card max-w-4xl mx-auto">
-                  {/* Album Art Placeholder */}
+                  {/* Album Art Placeholder
                   <div
                     className={`mx-auto md:mx-0 md:${
                       index % 2 === 0 ? "float-left" : "float-right"
@@ -82,7 +82,15 @@ export default function ReleasesPage() {
                       <br />
                       Cover Art]
                     </span>
-                  </div>
+                  </div> */}
+                  <iframe
+                    src={release.embedLink}
+                    width="100%"
+                    height="152"
+                    frameBorder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  />
 
                   {/* Release Info */}
                   <div className="space-medium">
@@ -93,10 +101,9 @@ export default function ReleasesPage() {
                       <span className="px-4 py-2 bg-[var(--muted)] text-white text-medium md:text-medium text-small typewriter rounded inline-block">
                         {release.type}
                       </span>
-                      <p className="text-medium md:text-medium text-small text-[var(--muted)] typewriter mt-4 mb-6">
-                        Released {formatDate(release.releaseDate)} •{" "}
-                        {release.tracks} track{release.tracks !== 1 ? "s" : ""}
-                      </p>
+                      <h2 className="text-medium md:text-sm text-[var(--accent-yellow)] mb-2 p-4">
+                        {release.releaseDate}
+                      </h2>
                       <div className="text-large md:text-large text-medium leading-relaxed handwritten mb-6">
                         {release.description
                           .split("\n")
@@ -108,7 +115,7 @@ export default function ReleasesPage() {
                       </div>
                     </div>
 
-                    {/* Links */}
+                    {/* Links
                     {(release.links.bandcamp || release.links.spotify) && (
                       <div className="mb-8 space-small">
                         {release.links.bandcamp && (
@@ -132,9 +139,9 @@ export default function ReleasesPage() {
                           </a>
                         )}
                       </div>
-                    )}
+                    )} */}
 
-                    {/* Tracklist */}
+                    {/* Tracklist
                     <div className="clear-both">
                       <h3 className="text-large md:text-large text-medium font-bold mb-4 text-[var(--accent-yellow)]">
                         Tracklist
@@ -152,7 +159,7 @@ export default function ReleasesPage() {
                           </li>
                         ))}
                       </ol>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
