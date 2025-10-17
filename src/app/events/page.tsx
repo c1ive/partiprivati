@@ -108,7 +108,7 @@ export default function EventsPage() {
                         {event.description}
                       </p>
                       <div className="flex flex-col gap-2">
-                        <span className="text-large font-bold text-[var(--accent)]">
+                        <span className="text-sm font-light">
                           {event.price}
                         </span>
                         {event.ticketLink && (
