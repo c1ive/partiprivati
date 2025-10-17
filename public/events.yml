@@ -1,9 +1,9 @@
 # Live Events & Shows
 events:
-- date: “2025-11-15”
-  venue: “demo cafè”
-  city: “Test”
-  description: “test”
-  ticketLink: “”
-  price: “”
+- date: “2025-11-02”
+  venue: “Haus 37 Vauban”
+  city: “Freiburg”
+  description: “Kinderkonzert”
+  ticketLink: “https://eventfrog.de/de/p/konzert/pop-rock/partiprivati-indie-pop-fuer-junge-ohren-7333059577448026207.html”
+  price: “10€ Normalpreis, 5€ Kinder”
   status: “confirmed”
