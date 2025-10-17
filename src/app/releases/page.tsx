@@ -85,18 +85,18 @@ export default function ReleasesPage() {
                   
 
                   {/* Release Info */}
-                  <div className="mx-auto md:mx-0 w-full max-w-[15rem] md:w-60 aspect-square mb-6 overflow-hidden rounded">
+                  
                     <iframe
                       src={release.embedLink}
-                      className="w-full h-full"
+                      className="w-full h-100"
                       frameBorder="0"
                       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                       loading="lazy"
                     />
-                  </div>
+                  
                   <div className="space-medium">
                     <div className="mb-6">
-                      <h2 className="text-huge md:text-huge text-large font-bold text-[var(--accent)] mb-2">
+                      <h2 className="text-large md:text-medium text-medium font-bold text-[var(--accent)] mb-2">
                         {release.title}
                       </h2>
                       <span className="px-4 py-2 bg-[var(--muted)] text-white text-medium md:text-medium text-small typewriter rounded inline-block">
