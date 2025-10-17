@@ -131,7 +131,7 @@ export default function EventsPage() {
         )}
 
         {/* Past Events */}
-        {pastEvents.length > 0 && (
+        {/* {pastEvents.length > 0 && (
           <section className="space-huge">
             <div className="position-center space-large">
               <h2 className="text-huge">Vergangene Konzerte</h2>
@@ -159,7 +159,7 @@ export default function EventsPage() {
               ))}
             </div>
           </section>
-        )}
+        )} */}
 
         {/* No Events Message */}
         {eventsData.events.length === 0 && (
