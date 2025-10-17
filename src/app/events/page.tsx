@@ -187,7 +187,7 @@ export default function EventsPage() {
             </div>
             <div className="position-center">
               <a
-                href="mailto:hallo@partiPrivati.band"
+                href="mailto:info@partiprivati-band.de"
                 className="indie-btn text-large bg-[var(--accent-yellow)] text-black border-black hover:bg-[var(--accent)] hover:text-white"
               >
                 Kontakt aufnehmen
