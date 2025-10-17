@@ -18,7 +18,22 @@ export default function EventsPage() {
   }, []);
 
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
+    // Support bare "YYYY-MM-DD" reliably (avoid inconsistent Date parsing)
+    const ymd = /^(\d{4})-(\d{2})-(\d{2})$/;
+    const match = dateString.match(ymd);
+    let date: Date;
+
+    if (match) {
+      const [, year, month, day] = match;
+      date = new Date(Number(year), Number(month) - 1, Number(day));
+    } else {
+      date = new Date(dateString);
+    }
+
+    if (Number.isNaN(date.getTime())) {
+      return dateString; // fallback to original string on invalid date
+    }
+
     return date.toLocaleDateString("de-DE", {
       weekday: "long",
       year: "numeric",
