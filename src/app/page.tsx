@@ -105,7 +105,7 @@ export default function Home() {
         {/* Contact - Big block center */}
         <div className="space-huge paper-bg p-8">
           <h2 className="text-huge md:text-huge text-large mb-8 position-center">
-            Get in Touch
+            Kontakt
           </h2>
           <div className="space-medium">
             <div className="position-center">
@@ -147,7 +147,7 @@ export default function Home() {
               href="/events"
               className="indie-btn text-large md:text-large text-medium bg-[var(--accent-yellow)] text-black border-black hover:bg-[var(--accent)] hover:text-white"
             >
-              Check Live Dates
+              Live-Termine
             </Link>
           </div>
           <div className="position-center space-medium">
@@ -155,7 +155,7 @@ export default function Home() {
               href="/releases"
               className="indie-btn text-large md:text-large text-medium bg-[var(--accent-yellow)] text-black border-black hover:bg-[var(--accent)] hover:text-white"
             >
-              Listen to Our Music
+              Unserer Musik
             </Link>
           </div>
         </div>
